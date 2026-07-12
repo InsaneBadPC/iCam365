@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-        Thread.sleep(5000)
+        Thread.sleep(5000L)
 
         // Otestuj RTSP na nalezených kandidátech
         for (ip in candidates) {
@@ -144,7 +144,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun testRtsp(ip: String): Boolean {
         return try {
-            val client = OkHttpClient.Builder().connectTimeout(3000).build()
+            val client = OkHttpClient.Builder()
+                .connectTimeout(java.time.Duration.ofMillis(3000))
+                .build()
             val request = Request.Builder()
                 .url("http://$username:$password@$ip:554/")
                 .build()
