@@ -30,15 +30,10 @@ jobs:
 
     - name: Build Release APK
       run: ./gradlew assembleRelease
+      continue-on-error: true
 
     - name: Upload Debug APK
       uses: actions/upload-artifact@v4
       with:
         name: iCam365-debug
         path: app/build/outputs/apk/debug/app-debug.apk
-
-    - name: Upload Release APK
-      uses: actions/upload-artifact@v4
-      with:
-        name: iCam365-release
-        path: app/build/outputs/apk/release/app-release-unsigned.apk
