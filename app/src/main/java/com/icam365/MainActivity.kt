@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
-import com.google.android.exoplayer2.source.RtspMediaSource
+import com.google.android.exoplayer2.source.rtsp.RtspMediaSource
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.IOException
